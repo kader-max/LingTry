@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walid</title>
+
+  <link rel="stylesheet" href="./bootstrap.css">
+  <link rel="stylesheet" href="./main.css">
+  <style>
+    th,
+    td {
+      transition: .5s;
+    }
+
+    li a:hover {
+      font-weight: bold;
+      transform: scale(1.1);
+
+    }
+
+    th:hover,
+    td:hover {
+      background-color: rgb(0, 217, 255);
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">WALID BOUCHAMA SITE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#st" style="cursor: pointer;">Ajoutre client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#stati" style="cursor: pointer;">Stock</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="cursor: pointer;">Total clients <span id="s"></span></a>
+          </li>
+        </ul>
+
+        <input class="form-control me-2" type="search" placeholder="Search by name" id="search"
+          onkeyup="search(this.value)" aria-label="Search" style="width: 300px;">
+
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="st" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="st">Client</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="dr">
+            <div class="container">
+              <div class="text">
+                Ajouter nouveau client
+              </div>
+              <form action="#">
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="text" required id="name">
+                    <div class="underline"></div>
+                    <label for="">Name</label>
+                  </div>
+                  <div class="input-data">
+                    <input type="text" required id="ad">
+                    <div class="underline"></div>
+                    <label for="">Adress</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="text" required id="num">
+                    <div class="underline"></div>
+                    <label for="">Telephone</label>
+                  </div>
+
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="text" required id="p1">
+                    <div class="underline"></div>
+                    <label for="">Pose de cable FO dans Goulotte (U)</label>
+                  </div>
+                  <div class="input-data">
+                    <input type="text" required id="pp1">
+                    <div class="underline"></div>
+                    <label for="">Pose de cable FO dans Goulotte (ML)</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p2">
+                    <div class="underline"></div>
+                    <label for="">Pose de cable de branchement Fo sans gouloftte U</label>
+                  </div>
+                  <div class="input-data">
+                    <input type="number" required id="pp2">
+                    <div class="underline"></div>
+                    <label for="">Pose de cable de branchement Fo sans gouloftte ML</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p3">
+                    <div class="underline"></div>
+                    <label for="">Pose et raccordement de prise optique (U)</label>
+                  </div>
+
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p4">
+                    <div class="underline"></div>
+                    <label for="">Fourniture et pose de goulotte 20*15mm (ML)</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p5">
+                    <div class="underline"></div>
+                    <label for="">Fourniture et pose de goulotte 60*20mm (ML)</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p6">
+                    <div class="underline"></div>
+                    <label for="">Raccordement de fibre optique avec U</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p7">
+                    <div class="underline"></div>
+                    <label for="">Foutniture et pose gaine a ressort (ML)</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p8">
+                    <div class="underline"></div>
+                    <label for="">Reperage et etiquetage (U)</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p9">
+                    <div class="underline"></div>
+                    <label for="">Persement de beton entre pallier (U)</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-data">
+                    <input type="number" required id="p10">
+                    <div class="underline"></div>
+                    <label for="">Persement mural (U)</label>
+                  </div>
+                </div>
+
+                <div class="form-row submit-btn">
+                  <div class="input-data">
+                    <div class="inner"></div>
+                    <input type="submit" value="Ajouter" id="b" onclick="run()">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  <div class="row">
+    <div class="col-sm-12">
+      <table border="1" class="table table-bordered table-dark">
+        <thead>
+          <tr class="s">
+            <td rowspan="3" style="padding-bottom: 100px;">N</td>
+            <th rowspan="3" style="padding-bottom: 100px;">nom</th>
+            <th rowspan="3" style="padding-bottom: 100px;">adress</th>
+            <th rowspan="3" style="padding-bottom: 100px;">telephone</th>
+            <td colspan="2">Pose de cable FO dans Goulotte</td>
+            <td colspan="2">Pose de cable de branchement Fo sans gouloftte</td>
+            <td>Pose et raccordement de prise optique</td>
+            <td>Fourniture et pose de goulotte 20*15mm</td>
+            <td>Fourniture et pose de goulotte 60*20mm</td>
+            <td>Raccordement de fibre optique avec</td>
+            <td>Foutniture et pose gaine a ressort</td>
+            <td>Reperage et etiquetage</td>
+            <td>Persement de beton entre pallier</td>
+            <td>Persement mural</td>
+            <th rowspan="3" style="padding-bottom: 100px;">updaate</th>
+            <th rowspan="3" style="padding-bottom: 100px;" style="padding-bottom: 50px;">delete</th>
+          </tr>
+          <tr>
+            <td colspan="2">01-AF</td>
+            <td colspan="2">02-AF</td>
+            <td>03-AF</td>
+            <td>04-AF</td>
+            <td>05-AF</td>
+            <td>06-AF</td>
+            <td>07-AF</td>
+            <td>9-AF</td>
+            <td>11-AF</td>
+            <td>12-AF</td>
+          </tr>
+          <tr>
+            <td>(U)</td>
+            <td>ML</td>
+            <td>U</td>
+            <td>ML</td>
+            <td>(U)</td>
+            <td>(ML)</td>
+            <td>(ML)</td>
+            <td>U</td>
+            <td>(ML)</td>
+            <td>(U)</td>
+            <td>(U)</td>
+            <td>(U)</td>
+          </tr>
+        </thead>
+        <tbody id="tb">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="stati" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Client</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card-body">
+            <h5 class="card-title text-center">Stock</h5>
+            <table class="table table-info">
+              <tr>
+                <td colspan="2">Pose de cable FO dans Goulotte</td>
+                <td colspan="2">Pose de cable de branchement Fo sans gouloftte</td>
+                <td>Pose et raccordement de prise optique</td>
+                <td>Fourniture et pose de goulotte 20*15mm</td>
+                <td>Fourniture et pose de goulotte 60*20mm</td>
+                <td>Raccordement de fibre optique avec</td>
+                <td>Foutniture et pose gaine a ressort</td>
+                <td>Reperage et etiquetage</td>
+                <td>Persement de beton entre pallier</td>
+                <td>Persement mural</td>
+              </tr>
+              <tr>
+                <td colspan="2">01-AF</td>
+                <td colspan="2">02-AF</td>
+                <td>03-AF</td>
+                <td>04-AF</td>
+                <td>05-AF</td>
+                <td>06-AF</td>
+                <td>07-AF</td>
+                <td>9-AF</td>
+                <td>11-AF</td>
+                <td>12-AF</td>
+              </tr>
+              <tr>
+                <td>(U)</td>
+                <td>ML</td>
+                <td>U</td>
+                <td>ML</td>
+                <td>(U)</td>
+                <td>(ML)</td>
+                <td>(ML)</td>
+                <td>U</td>
+                <td>(ML)</td>
+                <td>(U)</td>
+                <td>(U)</td>
+                <td>(U)</td>
+              </tr>
+              <tr>
+                <td id="p1t">1000</td>
+                <td id="pp1t">1000</td>
+                <td id="p2t">1000</td>
+                <td id="pp2t">1000</td>
+                <td id="p3t">1000</td>
+                <td id="p4t">1000</td>
+                <td id="p5t">1000</td>
+                <td id="p6t">1000</td>
+                <td id="p7t">1000</td>
+                <td id="p8t">1000</td>
+                <td id="p9t">1000</td>
+                <td id="p10t">1000</td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+  <script src="./jquery.js"></script>
+  <script src="./bootstrap.min.js"></script>
+</body>
+
+</html>
